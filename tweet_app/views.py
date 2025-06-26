@@ -12,7 +12,7 @@ def tweet_list(request):
 
 def tweet_create(request):
     if request.method=='POST':
-       TweetForm(request.POST,request.FILES)
+       form=TweetForm(request.POST,request.FILES)
        if form.is_valid():
            tweet=form.save(commit=False)
            tweet.user=request.user
